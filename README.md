@@ -28,11 +28,11 @@ rails db:migrate
 Start server with:
 
 ```rails server```
+
 Open http://localhost:3000/ in your browser.
 
 ## Author 
 👤 **Amine Smahi**
-## Amine's Profile
 - [GitHub](https://github.com/medaminedev66)
 - [AngelList](https://angel.co/u/md-amine-smahi)
 - [LinkedIn](https://www.linkedin.com/in/md-amine-smahi/)
