@@ -14,7 +14,7 @@ To get a local copy up and running follow these simple example steps.
 Ruby: 2.6.3 Rails: 5.2.3 Postgres: >=9.5
 
 ### Setup
-Instal gems with:
+Install gems with:
 ```
 bundle install
 ```
@@ -27,9 +27,29 @@ rails db:migrate
 ### Usage
 Start server with:
 
-```rails server```
+```
+rails server
+```
 
 Open http://localhost:3000/ in your browser.
+
+### Run tests
+Install npm with:
+```
+npm i
+```
+Install rspec with:
+```
+bundle install
+```
+and
+```
+rails generate rspec:install
+```
+run the test with:
+```
+rspec spec
+```
 
 ## Author 
 👤 **Amine Smahi**
