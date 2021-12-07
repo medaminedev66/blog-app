@@ -4,13 +4,6 @@ class User < ApplicationRecord
     has_many :likes, foreign_key: "Author_id", class_name: "Like"
 
     def recent_posts
-      recent_posts_array = []
-      i = 0
-      self.posts.each do |post|
-        break if i > 3
-        recent_posts_array << post
-        i += 1
-      end
-    return recent_posts_array
+      posts.limit(2).order(created_at: :desc)
     end
 end

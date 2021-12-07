@@ -1,14 +1,18 @@
 class Post < ApplicationRecord
-    belongs_to :Author_id, class_name: 'User', primary_key: :id, foreign_key: :Author_id
+    belongs_to :author, class_name: 'User'
     has_many :likes
     has_many :comments
 
     def update_counter
-      if self.Author_id.PostsCounter == nil
-         self.Author_id.update(PostsCounter: 1)
+      if author.PostsCounter == nil
+         author.update(PostsCounter: 1)
       else
-        self.Author_id.PostsCounter+=1
-        self.Author_id.update(PostsCounter: self.Author_id.PostsCounter)
+        author.PostsCounter+=1
+        author.update(PostsCounter: author.PostsCounter)
       end
+    end
+
+    def recent_comments
+      comments.limit(5).order(created_at: desc)
     end
 end
