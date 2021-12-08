@@ -12,9 +12,9 @@
   <p class="fs-4">Bio</p>
   <p><%= @user.Bio %></p>
 </div>
-<% @user.recent_posts.each_with_index do |post, index| %>
+<% @user.recent_posts.each do |post| %>
 <div class="post">
-  <p class="fs-5">Post <%= index + 1 %> </p>
+  <p class="fs-5">Post <%= post.id %> </p>
   <p><%= post.Text %> </p>
 </div>
 <% end %>
