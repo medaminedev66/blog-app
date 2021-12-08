@@ -4,7 +4,7 @@
 
 .comments {
   width: 60%;
-  margin: 0rem auto 0rem auto;
+  margin: 0 auto;
   border: 1px black solid;
   padding: 0 1rem;
 }
@@ -14,14 +14,14 @@
 }
 
 .user-name {
-    margin-right: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .post-with-comments {
   width: 60%;
-  margin: 1rem auto 0rem auto;
+  margin: 1rem auto 0 auto;
   border: 1px black solid;
-  padding: 1rem 1rem;  
+  padding: 1rem;
 }
 
 .all-post {
