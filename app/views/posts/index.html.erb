@@ -1,2 +1,29 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="user">
+  <div class="profile-image">
+  </div>
+  <div class="user-info">
+    <p class="fs-5"><%= @user.Name %></p>
+    <div class="num-posts">
+      <p>Number of posts: <%= !@user.PostsCounter ? 0 : @user.PostsCounter %> </p>
+    </div>
+  </div>
+</div>
+<% @posts.each do |post| %>
+<div class="post-with-comments">
+  <h4 class="fs-5">Post: #<%=post.id %></h4>
+  <p><%= post.Text %> </p>
+  <div class="likes-comments">
+      <p>comments: <%= !post.CommentsCounter ? 0 : @post.CommentsCounter %></p>
+      <p>Likes: <%= !post.LikesCounter ? 0 : @post.LikesCounter %></p>
+  </div>
+</div>
+<div class="comments">
+<h6>Comments:</h6>
+<% post.recent_comments.each do |comment| %>
+  <div class="comment">
+    <p class="user-name"><%= User.find_by(id: comment.Author_id).Name %>: </p>
+    <p class="ml-2"> <%= comment.Text %> </p>
+  </div>
+<% end %>
+</div>
+<% end %>

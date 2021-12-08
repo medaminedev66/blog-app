@@ -1,2 +1,24 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+
+<div class="all-post">
+  <div class="post-header">
+    <div class="post-info">
+      <p>Post: #<%= @post.id %></p>
+      <p>By: <%= @user.Name %></p>
+    </div>
+    <div class="comments-likes">
+      <p>comments: <%= !@post.CommentsCounter ? 0 : @post.CommentsCounter %></p>
+      <p>Likes: <%= !@post.LikesCounter ? 0 : @post.LikesCounter %></p>
+    </div>
+  </div>
+  <div class="post-text">
+    <p><%= @post.Text %></p>
+  </div>
+</div>
+<div class="comments">
+<% @comments.each do |comment| %>
+  <div class="comment">
+    <p class="user-name"><%= User.find_by(id: comment.Author_id).Name %>: </p>
+    <p class="ml-2"> <%= comment.Text %> </p>
+  </div>
+<% end %>
+</div>

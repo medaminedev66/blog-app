@@ -1,2 +1,26 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="user">
+  <div class="profile-image">
+  </div>
+  <div class="user-info">
+    <p class="fs-5"><%= @user.Name %></p>
+    <div class="num-posts">
+      <p>Number of posts: <%= !@user.PostsCounter ? 0 : @user.PostsCounter %> </p>
+    </div>
+  </div>
+</div>
+<div class="bio">
+  <p class="fs-4">Bio</p>
+  <p><%= @user.Bio %></p>
+</div>
+<% @user.recent_posts.each do |post| %>
+<div class="post">
+  <p class="fs-5">Post <%= post.id %> </p>
+  <p><%= post.Text %> </p>
+</div>
+<% end %>
+<div class="see-posts">
+  <%# <button class="btn btn-outline-dark"></button> %>
+  <%= link_to 'See All The Posts', "/users/#{@user.id}/posts" %>
+</div>
+
+
