@@ -10,10 +10,15 @@
 </div>
 <% @posts.each do |post| %>
 <div class="post-with-comments">
-  <p class="fs-5"><%= post.Title %></p>
+  <h4 class="fs-5">Post: #<%=post.id %></h4>
   <p><%= post.Text %> </p>
+  <div class="likes-comments">
+      <p>comments: <%= !post.CommentsCounter ? 0 : @post.CommentsCounter %></p>
+      <p>Likes: <%= !post.LikesCounter ? 0 : @post.LikesCounter %></p>
+  </div>
 </div>
 <div class="comments">
+<h6>Comments:</h6>
 <% post.recent_comments.each do |comment| %>
   <div class="comment">
     <p class="user-name"><%= User.find_by(id: comment.Author_id).Name %>: </p>

@@ -18,6 +18,8 @@
 }
 
 .post-with-comments {
+  display: flex;
+  flex-direction: column;
   width: 60%;
   margin: 1rem auto 0 auto;
   border: 1px black solid;
@@ -46,4 +48,15 @@
 .comments-likes {
   display: flex;
   gap: 1rem;
+}
+
+.see-posts {
+  display: flex;
+  justify-content: center;
+}
+
+.likes-comments {
+  display: flex;
+  gap: 1rem;
+  align-self: flex-end;
 }
