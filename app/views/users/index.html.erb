@@ -1,6 +1,7 @@
 <% @users.each do |user| %>
 <div class="user">
   <div class="profile-image">
+  <img src=<%= user.Photo%> alt=""/>
   </div>
   <div class="user-info">
     <p class="fs-5"><%= user.Name %></p>

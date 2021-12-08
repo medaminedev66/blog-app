@@ -1,3 +1,49 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.comments {
+  width: 60%;
+  margin: 0rem auto 0rem auto;
+  border: 1px black solid;
+  padding: 0 1rem;
+}
+
+.comment {
+  display: flex;
+}
+
+.user-name {
+    margin-right: 0.5rem;
+}
+
+.post-with-comments {
+  width: 60%;
+  margin: 1rem auto 0rem auto;
+  border: 1px black solid;
+  padding: 1rem 1rem;  
+}
+
+.all-post {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 1rem auto 1rem auto;
+  border: 1px black solid;
+  padding: 1rem;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-info {
+  display: flex;
+  gap: 1rem;
+}
+
+.comments-likes {
+  display: flex;
+  gap: 1rem;
+}

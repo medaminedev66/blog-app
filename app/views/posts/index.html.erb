@@ -1,6 +1,24 @@
+<div class="user">
+  <div class="profile-image">
+  </div>
+  <div class="user-info">
+    <p class="fs-5"><%= @user.Name %></p>
+    <div class="num-posts">
+      <p>Number of posts: <%= !@user.PostsCounter ? 0 : @user.PostsCounter %> </p>
+    </div>
+  </div>
+</div>
 <% @posts.each do |post| %>
-<div class="post">
+<div class="post-with-comments">
   <p class="fs-5"><%= post.Title %></p>
   <p><%= post.Text %> </p>
+</div>
+<div class="comments">
+<% post.recent_comments.each do |comment| %>
+  <div class="comment">
+    <p class="user-name"><%= User.find_by(id: comment.Author_id).Name %>: </p>
+    <p class="ml-2"> <%= comment.Text %> </p>
+  </div>
+<% end %>
 </div>
 <% end %>
