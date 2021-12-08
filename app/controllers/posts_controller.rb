@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
-  def index; end
+  def index
+    @posts = Post.all.where(author_id: params[:user_id])
+  end
 
-  def show; end
+  def show
+  end
 end
