@@ -1,0 +1,19 @@
+<%= form_with(model: @post, url: user_posts_path) do |form| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this Post from being saved:</h2>
+
+      <ul>
+        <% @post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.text_field :Title, placeholder: 'Title...', class:"form-control" %>
+  <br>
+  <%= form.text_area :Text, placeholder: 'Post content...', class:"form-control" %>
+  <br>
+  <%= form.submit class: 'btn btn-dark' %>
+  <br>
+<% end %>

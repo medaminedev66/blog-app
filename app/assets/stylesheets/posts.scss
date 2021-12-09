@@ -60,3 +60,12 @@
   gap: 1rem;
   align-self: flex-end;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 1rem auto 0 auto;
+  gap: 1rem;
+  padding: 1rem;
+}

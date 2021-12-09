@@ -8,6 +8,9 @@
     </div>
   </div>
 </div>
+<div class="user">
+<%= link_to 'New Post', new_user_post_path, class: 'btn btn-secondary' %>
+</div>
 <% @posts.each do |post| %>
 <div class="post-with-comments">
   <h4 class="fs-5">Post: #<%=post.id %></h4>
@@ -27,3 +30,4 @@
 <% end %>
 </div>
 <% end %>
+
