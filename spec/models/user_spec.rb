@@ -14,4 +14,11 @@ RSpec.describe User, type: :model do
     subject.PostsCounter = -5
     expect(subject).to_not be_valid
   end
+
+  it 'test the recent method' do
+    5.times do |_post|
+      Post.create(Title: 'Post', Text: 'Create a post', author_id: subject, LikesCounter: 0, CommentsCounter: 0)
+    end
+    expect(subject.recent_posts).to eq(subject.posts.last(3))
+  end
 end

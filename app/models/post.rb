@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
-  validates :Title, length: { maximum: 250 }
+  validates :Title, presence: true
+  validates :Text, length: { maximum: 250 }
   validates :CommentsCounter, :LikesCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   belongs_to :author, class_name: 'User', counter_cache: :PostsCounter
