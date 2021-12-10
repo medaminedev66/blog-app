@@ -11,7 +11,7 @@
 <div class="user">
 <%= link_to 'New Post', new_user_post_path, class: 'btn btn-secondary' %>
 </div>
-<% @posts.each do |post| %>
+<% @user.posts.each do |post| %>
 <div class="post-with-comments">
   <%= link_to "Post #{post.id}", "/users/#{@user.id}/posts/#{post.id}", class: "fs-5" %>
   <p><%= post.Text %> </p>
