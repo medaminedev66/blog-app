@@ -1,12 +1,12 @@
 class CommentsController < ApplicationController
   def create
-    @user = current_user
     @publisher = User.find(params[:user_id])
     @post = Post.find(params[:post_id])
     @comment = Comment.new(params[:comment].permit(:Text))
-    @comment.Author_id = @user.id
+    @comment.Author_id = current_user.id
     @comment.post_id = @post.id
     if @comment.save
+      @comment.update_comments_counter
       flash[:success] = 'Object successfully created'
     else
       flash[:error] = 'Something went wrong'

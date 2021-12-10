@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     end
   end
 
+  put 'user/:user_id/post/:id/like', to: 'posts#like', as: 'like' 
 end
