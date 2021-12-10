@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-
   subject { Post.new(Title: 'Learn how to write a model test', Text: 'Why model tests important', author_id: 1) }
 
   before { subject.save }
@@ -12,7 +11,7 @@ RSpec.describe Post, type: :model do
   end
 
   it 'Title must not exceed 250 characters.' do
-    subject.Title = 'test' * 100
+    subject.Text = 'test' * 100
     expect(subject).to_not be_valid
   end
 
