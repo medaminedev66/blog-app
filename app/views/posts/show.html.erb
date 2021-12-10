@@ -13,6 +13,12 @@
   <div class="post-text">
     <p><%= @post.Text %></p>
   </div>
+  <div>
+  <%= link_to 'Add a comment', class: 'btn btn-secondary'%>
+  </div>
+</div>
+<div class="create-comment">
+<%= render 'comments/comment' %>
 </div>
 <div class="comments">
 <% @comments.each do |comment| %>
