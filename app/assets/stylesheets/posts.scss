@@ -3,10 +3,15 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .comments {
-  width: 60%;
   margin: 0 auto;
-  border: 1px black solid;
-  padding: 0 1rem;
+  width: 60%;
+  background-color: gainsboro;
+  padding: 1rem;
+}
+
+.create-comment {
+  width: 60%;
+  margin: 1rem auto;
 }
 
 .comment {
@@ -59,4 +64,19 @@
   display: flex;
   gap: 1rem;
   align-self: flex-end;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 1rem auto 0 auto;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.likes {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }

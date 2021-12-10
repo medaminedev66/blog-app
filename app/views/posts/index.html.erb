@@ -8,13 +8,16 @@
     </div>
   </div>
 </div>
+<div class="user">
+<%= link_to 'New Post', new_user_post_path, class: 'btn btn-secondary' %>
+</div>
 <% @posts.each do |post| %>
 <div class="post-with-comments">
-  <h4 class="fs-5">Post: #<%=post.id %></h4>
+  <%= link_to "Post #{post.id}", "/users/#{@user.id}/posts/#{post.id}", class: "fs-5" %>
   <p><%= post.Text %> </p>
   <div class="likes-comments">
-      <p>comments: <%= !post.CommentsCounter ? 0 : @post.CommentsCounter %></p>
-      <p>Likes: <%= !post.LikesCounter ? 0 : @post.LikesCounter %></p>
+      <p>comments: <%= !post.CommentsCounter ? 0 : post.CommentsCounter %></p>
+      <p>Likes: <%= !post.LikesCounter ? 0 : post.LikesCounter %></p>
   </div>
 </div>
 <div class="comments">
@@ -27,3 +30,4 @@
 <% end %>
 </div>
 <% end %>
+
