@@ -32,7 +32,7 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id], author_id: params[:user_id])
     @like = Like.create(post_id: @post.id, Author_id: current_user.id)
     @like.update_likes_counter
-    redirect_to user_post_path(@post)
+    redirect_to user_post_path(@user, @post)
   end
 
   private

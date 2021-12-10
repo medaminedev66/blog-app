@@ -4,10 +4,12 @@
   <img src=<%= user.Photo%> alt=""/>
   </div>
   <div class="user-info">
-    <p class="fs-5"><%= user.Name %></p>
+    <%= link_to "#{user.Name}", "/users/#{user.id}", class: "fs-5" %>
     <div class="num-posts">
       <p>Number of posts: <%= !user.PostsCounter ? 0 : user.PostsCounter %> </p>
     </div>
   </div>
 </div>
 <% end %>
+
+  

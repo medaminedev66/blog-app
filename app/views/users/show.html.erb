@@ -14,7 +14,7 @@
 </div>
 <% @user.recent_posts.each do |post| %>
 <div class="post">
-  <p class="fs-5">Post <%= post.id %> </p>
+  <%= link_to "Post #{post.id}", "/users/#{@user.id}/posts/#{post.id}", class: "fs-5" %>
   <p><%= post.Text %> </p>
 </div>
 <% end %>
