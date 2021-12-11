@@ -7,9 +7,9 @@ class CommentsController < ApplicationController
     @comment.post_id = @post.id
     if @comment.save
       @comment.update_comments_counter
-      flash[:success] = 'Object successfully created'
+      flash[:notice] = 'Comment successfully added'
     else
-      flash[:error] = 'Something went wrong'
+      flash[:notice] = 'Something went wrong'
     end
     redirect_to user_post_path(@publisher, @post)
   end

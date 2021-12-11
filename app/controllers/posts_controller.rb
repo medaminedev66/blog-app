@@ -1,12 +1,11 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find_by(id: params[:user_id])
-    @posts = Post.all.where(author_id: params[:user_id])
+    @user = User.includes(:posts).find(params[:user_id])
   end
 
   def show
     @user = User.find_by(id: params[:user_id])
-    @post = Post.find_by(id: params[:id], author_id: params[:user_id])
+    @post = @user.posts.includes(:comments, :likes).find(params[:id])
     @comments = Comment.all.where(post_id: params[:id])
   end
 
@@ -16,13 +15,15 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.CommentsCounter = 0
+    @post.LikesCounter = 0
     @post.author_id = params[:user_id]
     if @post.save
       @post.update_counter
-      flash[:success] = 'Object successfully created'
+      flash[:notice] = 'Post successfully created'
       redirect_to user_post_path(id: @post.id, user_id: @post.author_id)
     else
-      flash[:error] = 'Something went wrong'
+      flash[:notice] = 'Something went wrong'
       render 'new'
     end
   end
@@ -32,6 +33,7 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id], author_id: params[:user_id])
     @like = Like.create(post_id: @post.id, Author_id: current_user.id)
     @like.update_likes_counter
+    flash[:notice] = 'Like successfully added'
     redirect_to user_post_path(@user, @post)
   end
 
