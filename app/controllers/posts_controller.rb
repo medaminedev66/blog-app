@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.CommentsCounter = 0
     @post.LikesCounter = 0
-    @post.author_id = params[:user_id]
+    @post.author_id = current_user.id
     if @post.save
       @post.update_counter
       flash[:notice] = 'Post successfully created'
