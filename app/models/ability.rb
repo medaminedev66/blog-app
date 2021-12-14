@@ -15,7 +15,7 @@ class Ability
       end
 
       can :destroy, Comment do |comment|
-        comment.author == user
+        comment.Author == user
       end
 
       can %i[read create like], :all

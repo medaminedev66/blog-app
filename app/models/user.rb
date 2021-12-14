@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :posts, foreign_key: 'author_id', class_name: 'Post'
   has_many :likes, foreign_key: 'Author_id', class_name: 'Like'
 
-  Roles = %i[admin default].freeze
+  ROLES = %i[admin default]
 
   def is?(requested_role)
     role == requested_role.to_s

@@ -1,6 +1,4 @@
 class CommentsController < ApplicationController
-  load_and_authorize_resource
-  
   def create
     @publisher = User.find(params[:user_id])
     @post = Post.find(params[:post_id])
@@ -17,12 +15,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    def destroy
-      @comment = Comment.find_by(id: params[:id])
-
-      @comment.destroy
-      flash[:notice] = "The Comment was successfully destroyed."
-      redirect_to user_post_url(User.find(params[:user_id]), Post.find(params[:post_id]))
-    end
+    @comment = Comment.find_by(id: params[:id])
+    @comment.destroy
+    flash[:notice] = 'The Comment was successfully destroyed.'
+    redirect_to user_post_url(User.find(params[:user_id]), Post.find(params[:post_id]))
   end
 end
