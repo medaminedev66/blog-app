@@ -16,6 +16,12 @@
   <div class="likes">
   <i class="far fa-thumbs-up"></i><%= button_to "Like", like_path(@user, @post), method: "put", class: 'btn btn-secondary'%>
   </div>
+  <br>
+  <div class="delete">
+    <% if can? :destroy , @post %>
+     <%= link_to 'Destroy', user_post_path(@user, @post), method: :delete, data: { confirm: 'Are you sure?' } %>
+     <% end %>
+    </div>
   </div>
 </div>
 <div class="create-comment">
@@ -26,6 +32,11 @@
   <div class="comment">
     <p class="user-name"><%= User.find_by(id: comment.Author_id).Name %>: </p>
     <p class="ml-2"> <%= comment.Text %> </p>
+    <div>
+    <% if can? :destroy, comment %>
+        <%= button_to "Delete", user_post_comment_path(@user, @post, comment), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"%>
+        <% end %>
+    </div>
   </div>
 <% end %>
 </div>

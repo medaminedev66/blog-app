@@ -4,8 +4,8 @@ class Post < ApplicationRecord
   validates :CommentsCounter, :LikesCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   belongs_to :author, class_name: 'User', counter_cache: :PostsCounter
-  has_many :likes
-  has_many :comments
+  has_many :likes, dependent: :delete_all
+  has_many :comments, dependent: :delete_all
 
   def update_counter
     if author.PostsCounter.nil?
