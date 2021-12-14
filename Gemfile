@@ -66,5 +66,5 @@ end
 # devise athentication
 gem 'devise'
 
-#CanCanCan
+# CanCanCan
 gem 'cancancan'

@@ -16,6 +16,12 @@
   <div class="likes">
   <i class="far fa-thumbs-up"></i><%= button_to "Like", like_path(@user, @post), method: "put", class: 'btn btn-secondary'%>
   </div>
+  <br>
+  <div class="delete">
+    <% if can? :destroy , @post %>
+     <%= link_to 'Destroy', user_post_path(@user, @post), method: :delete, data: { confirm: 'Are you sure?' } %>
+     <% end %>
+    </div>
   </div>
 </div>
 <div class="create-comment">

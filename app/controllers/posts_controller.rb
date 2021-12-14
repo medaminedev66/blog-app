@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.includes(:posts).find(params[:user_id])
   end
@@ -35,6 +37,13 @@ class PostsController < ApplicationController
     @like.update_likes_counter
     flash[:notice] = 'Like successfully added'
     redirect_to user_post_path(@user, @post)
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:notice] = 'The Post was successfully destroyed.'
+    redirect_to user_posts_url
   end
 
   private
