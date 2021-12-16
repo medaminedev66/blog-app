@@ -1,12 +1,12 @@
 <% @users.each do |user| %>
 <div class="user">
   <div class="profile-image">
-  <img src=<%= user.Photo%> alt=""/>
+  <img class="img" src=<%= user.Photo%> alt=<%= user.Photo%>/>
   </div>
   <div class="user-info">
-    <%= link_to "#{user.Name}", "/users/#{user.id}", class: "fs-5" %>
+    <%= link_to "#{user.Name}", "/users/#{user.id}", id: "user_#{user.id}", class: "fs-5" %>
     <div class="num-posts">
-      <p>Number of posts: <%= !user.PostsCounter ? 0 : user.PostsCounter %> </p>
+      <p>Number of posts: <%= user.PostsCounter %> </p>
     </div>
   </div>
 </div>
