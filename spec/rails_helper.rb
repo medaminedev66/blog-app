@@ -8,15 +8,14 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'rspec/rails'
 
 Capybara.register_driver :selenium_chrome do |app|
-   Capybara::Selenium::Driver.new(app, browser: :chrome)
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 
 Capybara.javascript_driver = :selenium_chrome
 
-
 begin
   ActiveRecord::Migration.maintain_test_schema!
-  rescue ActiveRecord::PendingMigrationError => e
+rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
@@ -48,7 +47,4 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
-
 end
-
-
