@@ -10,6 +10,7 @@ RSpec.describe "posts/index.html.erb", type: :feature do
     end
     fill_in 'user[email]', with: "md.amine.smahi@gmail.com"
     fill_in 'user[password]', with: "admin@2020"
+    click_button 'Log in'
     visit(user_posts_path(@user.id))
   end
 
