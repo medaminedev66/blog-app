@@ -1,18 +1,11 @@
-example_id                     | status | run_time        |
------------------------------- | ------ | --------------- |
-./spec/login_spec.rb[1:1]      | passed | 0.27214 seconds |
-./spec/login_spec.rb[1:2]      | passed | 6.17 seconds    |
-./spec/login_spec.rb[1:3]      | passed | 0.2515 seconds  |
-./spec/login_spec.rb[1:4]      | passed | 0.42067 seconds |
-./spec/login_spec.rb[1:5]      | passed | 0.7324 seconds  |
-./spec/login_spec.rb[1:6]      | passed | 0.80955 seconds |
-./spec/user_index_spec.rb[1:1] | passed | 0.54042 seconds |
-./spec/user_index_spec.rb[1:2] | passed | 0.65434 seconds |
-./spec/user_index_spec.rb[1:3] | passed | 6.13 seconds    |
-./spec/user_index_spec.rb[1:4] | passed | 1.12 seconds    |
-./spec/user_show_spec.rb[1:1]  | passed | 0.66397 seconds |
-./spec/user_show_spec.rb[1:2]  | passed | 8.08 seconds    |
-./spec/user_show_spec.rb[1:3]  | passed | 0.528 seconds   |
-./spec/user_show_spec.rb[1:4]  | passed | 0.60022 seconds |
-./spec/user_show_spec.rb[1:5]  | passed | 0.74591 seconds |
-./spec/user_show_spec.rb[1:6]  | passed | 0.5276 seconds  |
+example_id                      | status | run_time        |
+------------------------------- | ------ | --------------- |
+./spec/post_index_rspec.rb[1:1] | passed | 0.423 seconds   |
+./spec/post_index_rspec.rb[1:2] | passed | 7.07 seconds    |
+./spec/post_index_rspec.rb[1:3] | passed | 0.45981 seconds |
+./spec/post_index_rspec.rb[1:4] | passed | 0.44282 seconds |
+./spec/post_index_rspec.rb[1:5] | passed | 0.69979 seconds |
+./spec/post_index_rspec.rb[1:6] | passed | 0.63934 seconds |
+./spec/post_index_rspec.rb[1:7] | passed | 0.40056 seconds |
+./spec/post_index_rspec.rb[1:8] | passed | 0.44979 seconds |
+./spec/post_index_rspec.rb[1:9] | passed | 0.69667 seconds |

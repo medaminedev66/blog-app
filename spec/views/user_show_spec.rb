@@ -39,5 +39,4 @@ RSpec.describe "users/index.html.erb", type: :feature do
   it "shows a button that lets the user view all of a user's posts" do
     expect(find_link('See All The Posts').visible?).to be true
   end
-
 end

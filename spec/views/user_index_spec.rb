@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "users/index.html.erb", type: :feature do
+RSpec.describe "users/show.html.erb", type: :feature do
   before(:each) do
     visit new_user_session_path
     @user1 = User.new(Name: "Amine", Bio: "Full stack developer", email: "md.amine.smahi@gmail.com", password: "admin@2020", Photo: "photo_url", PostsCounter: 1, confirmed_at: Time.now)
