@@ -59,6 +59,8 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 # rspec
 group :development, :test do
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 4.0.0.beta2'
 end

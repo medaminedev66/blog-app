@@ -13,7 +13,7 @@
 </div>
 <% @user.posts.each do |post| %>
 <div class="post-with-comments">
-  <%= link_to "Post #{post.id}", "/users/#{@user.id}/posts/#{post.id}", class: "fs-5" %>
+  <%= link_to "Post #{post.id}", "/users/#{@user.id}/posts/#{post.id}", id: "post_#{post.id}", class: "fs-5" %>
   <p><%= post.Text %> </p>
   <div class="likes-comments">
       <p>comments: <%= !post.CommentsCounter ? 0 : post.CommentsCounter %></p>
