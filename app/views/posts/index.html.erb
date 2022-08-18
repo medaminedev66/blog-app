@@ -1,31 +1,22 @@
-<div class="user">
-  <div class="profile-image">
-  </div>
-  <div class="user-info">
-    <p class="fs-5"><%= @user.Name %></p>
-    <div class="num-posts">
-      <p>Number of posts: <%= !@user.PostsCounter ? 0 : @user.PostsCounter %> </p>
-    </div>
-  </div>
-</div>
+<%= render 'users/user', user: @user%>
 <div class="user">
 <%= link_to 'New Post', new_user_post_path, class: 'btn btn-secondary' %>
 </div>
 <% @user.posts.each do |post| %>
 <div class="post-with-comments">
   <%= link_to "Post #{post.id}", "/users/#{@user.id}/posts/#{post.id}", id: "post_#{post.id}", class: "fs-5" %>
-  <p><%= post.Text %> </p>
+  <p><%= post.text %> </p>
   <div class="likes-comments">
-      <p>comments: <%= !post.CommentsCounter ? 0 : post.CommentsCounter %></p>
-      <p>Likes: <%= !post.LikesCounter ? 0 : post.LikesCounter %></p>
+      <p>comments: <%= !post.commentsCounter ? 0 : post.commentsCounter %></p>
+      <p>Likes: <%= !post.likesCounter ? 0 : post.likesCounter %></p>
   </div>
 </div>
 <div class="comments">
 <h6>Comments:</h6>
 <% post.recent_comments.each do |comment| %>
   <div class="comment">
-    <p class="user-name"><%= User.find_by(id: comment.Author_id).Name %>: </p>
-    <p class="ml-2"> <%= comment.Text %> </p>
+    <p class="user-name"><%= User.find_by(id: comment.author_id).name %>: </p>
+    <p class="ml-2"> <%= comment.text %> </p>
   </div>
 <% end %>
 </div>

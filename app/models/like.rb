@@ -3,11 +3,11 @@ class Like < ApplicationRecord
   belongs_to :post, counter_cache: :LikesCounter
 
   def update_likes_counter
-    if post.LikesCounter.nil?
+    if post.likesCounter.nil?
       post.update(LikesCounter: 1)
     else
-      post.LikesCounter += 1
-      post.update(LikesCounter: post.LikesCounter)
+      post.likesCounter += 1
+      post.update(likesCounter: post.likesCounter)
     end
   end
 end

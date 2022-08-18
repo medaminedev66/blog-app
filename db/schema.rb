@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 2021_12_14_091352) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.text "Text"
+    t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "post_id", null: false
-    t.bigint "Author_id"
-    t.index ["Author_id"], name: "index_comments_on_Author_id"
+    t.bigint "author_id"
+    t.index ["author_id"], name: "index_comments_on_author_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
@@ -29,16 +29,16 @@ ActiveRecord::Schema.define(version: 2021_12_14_091352) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "post_id", null: false
-    t.bigint "Author_id"
-    t.index ["Author_id"], name: "index_likes_on_Author_id"
+    t.bigint "author_id"
+    t.index ["author_id"], name: "index_likes_on_author_id"
     t.index ["post_id"], name: "index_likes_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "Title"
-    t.text "Text"
-    t.integer "CommentsCounter"
-    t.integer "LikesCounter"
+    t.string "title"
+    t.text "text"
+    t.integer "commentsCounter"
+    t.integer "likesCounter"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "author_id"
@@ -46,12 +46,12 @@ ActiveRecord::Schema.define(version: 2021_12_14_091352) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "Name"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "Bio"
-    t.integer "PostsCounter"
-    t.text "Photo"
+    t.text "bio"
+    t.integer "postsCounter", default: 0
+    t.text "photo"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(version: 2021_12_14_091352) do
   end
 
   add_foreign_key "comments", "posts"
-  add_foreign_key "comments", "users", column: "Author_id"
+  add_foreign_key "comments", "users", column: "author_id"
   add_foreign_key "likes", "posts"
-  add_foreign_key "likes", "users", column: "Author_id"
+  add_foreign_key "likes", "users", column: "author_id"
   add_foreign_key "posts", "users", column: "author_id"
 end

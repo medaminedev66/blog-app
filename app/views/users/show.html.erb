@@ -2,20 +2,20 @@
   <div class="profile-image">
   </div>
   <div class="user-info">
-    <p class="fs-5"><%= @user.Name %></p>
+    <p class="fs-5"><%= @user.name %></p>
     <div class="num-posts">
-      <p>Number of posts: <%= !@user.PostsCounter ? 0 : @user.PostsCounter %> </p>
+      <p>Number of posts: <%= !@user.postsCounter ? 0 : @user.postsCounter %> </p>
     </div>
   </div>
 </div>
 <div class="bio">
   <p class="fs-4">Bio</p>
-  <p><%= @user.Bio %></p>
+  <p><%= @user.bio %></p>
 </div>
 <% @user.recent_posts.each do |post| %>
 <div class="post">
   <%= link_to "Post #{post.id}", "/users/#{@user.id}/posts/#{post.id}", class: "fs-5" %>
-  <p><%= post.Text %> </p>
+  <p><%= post.text %> </p>
 </div>
 <% end %>
 <div class="see-posts">

@@ -1,16 +1,5 @@
 <% @users.each do |user| %>
-<div class="user">
-  <div class="profile-image">
-  <img class="img" src=<%= user.Photo%> alt=<%= user.Photo%>/>
-  </div>
-  <div class="user-info">
-    <%= link_to "#{user.Name}", "/users/#{user.id}", id: "user_#{user.id}", class: "fs-5" %>
-    <div class="num-posts">
-      <p>Number of posts: <%= user.PostsCounter %> </p>
-    </div>
-  </div>
-</div>
+<%= render user, user: user%>
 <% end %>
-<p>Hello world</p>
 
   

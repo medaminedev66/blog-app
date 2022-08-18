@@ -1,6 +1,6 @@
 class AddColunmsToUser < ActiveRecord::Migration[6.1]
   def change
-    add_column :users, :Bio, :text
-    add_column :users, :PostsCounter, :int
+    add_column :users, :bio, :text
+    add_column :users, :postsCounter, :int, default: 0
   end
 end

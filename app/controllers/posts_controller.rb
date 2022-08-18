@@ -17,9 +17,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.CommentsCounter = 0
-    @post.LikesCounter = 0
-    @post.author_id = current_user.id
+    @post.commentsCounter = 0
+    @post.likesCounter = 0
+    @post.author_id = 1
     if @post.save
       @post.update_counter
       flash[:notice] = 'Post successfully created'
@@ -49,6 +49,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:Title, :Text)
+    params.require(:post).permit(:title, :text)
   end
 end

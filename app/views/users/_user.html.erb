@@ -1,0 +1,11 @@
+<div class="user">
+  <div class="profile-image">
+  <img class="img" src=<%= user.photo%> alt=<%= user.photo%>/>
+  </div>
+  <div class="user-info">
+    <%= link_to "#{user.name}", "/users/#{user.id}", id: "user_#{user.id}", class: "fs-5" %>
+    <div class="num-posts">
+      <p>Number of posts: <%= user.postsCounter %> </p>
+    </div>
+  </div>
+</div>

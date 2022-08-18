@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  # authenticate_user_before
+  
   def index
     @users = User.all
   end

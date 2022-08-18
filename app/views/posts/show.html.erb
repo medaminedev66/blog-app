@@ -2,15 +2,15 @@
   <div class="post-header">
     <div class="post-info">
       <p>Post: #<%= @post.id %></p>
-      <p>By: <%= @user.Name %></p>
+      <p>By: <%= @user.name %></p>
     </div>
     <div class="comments-likes">
-      <p>comments: <%= !@post.CommentsCounter ? 0 : @post.CommentsCounter %></p>
-      <p>Likes: <%= !@post.LikesCounter ? 0 : @post.LikesCounter %></p>
+      <p>comments: <%= !@post.commentsCounter ? 0 : @post.commentsCounter %></p>
+      <p>Likes: <%= !@post.likesCounter ? 0 : @post.likesCounter %></p>
     </div>
   </div>
   <div class="post-text">
-    <p><%= @post.Text %></p>
+    <p><%= @post.text %></p>
   </div>
   <div>
   <div class="likes">
@@ -30,8 +30,8 @@
 <div class="comments">
 <% @comments.each do |comment| %>
   <div class="comment">
-    <p class="user-name"><%= User.find_by(id: comment.Author_id).Name %>: </p>
-    <p class="ml-2"> <%= comment.Text %> </p>
+    <p class="user-name"><%= User.find_by(id: comment.author_id).name %>: </p>
+    <p class="ml-2"> <%= comment.text %> </p>
     <div>
     <% if can? :destroy, comment %>
         <%= button_to "Delete", user_post_comment_path(@user, @post, comment), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"%>
